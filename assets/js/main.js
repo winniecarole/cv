@@ -34,7 +34,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -189,7 +189,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -253,4 +253,26 @@
     })
   });
 
-})()
+})();
+
+function sendEMail(params){
+  var tempParams = {
+    from_name: document.getElementById("name").value,
+    to_name: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+
+  };
+
+  emailjs.send('service_rjs7ovp','template_891r5pe',tempParams).then(function (res){
+    console.log("succes",res.status);
+  })
+
+  alert("Thank you for Your message");
+  document.getElementById("name").value ='';
+  document.getElementById("email").value ='';
+  document.getElementById("message").value = '';
+
+}
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("LTEw1N26HIMcOxGp4");
+        })();
+    </script>
+</head>
+<body>
+    <input type="text" id="name" placeholder=" Enter to name">
+    <input type="email" id="Fromname" placeholder=" Enter Email">
+    <input type="text" id="msg" placeholder=" Enter to name">
+    <button onclick="sendMail()">send</button>
+<script>
+    function sendMail(params){
+        var tempParams = {
+            from_name: document.getElementById("Fromname").value,
+            to_name: document.getElementById("name").value,
+            message: document.getElementById("msg").value,
+
+        };
+        emailjs.send('service_rjs7ovp','template_891r5pe',tempParams).then(function (res){
+            console.log("succes",res.status);
+        })
+    }
+</script>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+</body>
+</html>
