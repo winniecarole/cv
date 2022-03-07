@@ -272,11 +272,9 @@ function sendEMail(params){
   }
 
   if(tempParams.from_name !='' && tempParams.to_mail !='' && tempParams.message !=''){
-
-
     emailjs.send('service_rjs7ovp','template_891r5pe',tempParams).then(function (res){
-    console.log("succes",res.status);
-  })
+      console.log("succes",res.status);
+    })
 
     swal({
       title: "Your messsage has been sent. Thank you!",
@@ -287,7 +285,13 @@ function sendEMail(params){
     document.getElementById("message").value = '';
   }
 
+
+
 }
+
+
+
+
 
 
 
