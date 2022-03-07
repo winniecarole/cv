@@ -262,15 +262,30 @@ function sendEMail(params){
     message: document.getElementById("message").value,
 
   };
+  if(tempParams.from_name =='' || tempParams.to_mail =='' || tempParams.message =='') {
+    swal({
+      title: "Fields Empty",
+      text: "Please check the missing field",
+      icon: "warning",
+      button: "OK"
+    });
+  }
 
-  emailjs.send('service_rjs7ovp','template_891r5pe',tempParams).then(function (res){
+  if(tempParams.from_name !='' && tempParams.to_mail !='' && tempParams.message !=''){
+
+
+    emailjs.send('service_rjs7ovp','template_891r5pe',tempParams).then(function (res){
     console.log("succes",res.status);
   })
 
-  alert("Thank you for Your message");
-  document.getElementById("name").value ='';
-  document.getElementById("email").value ='';
-  document.getElementById("message").value = '';
+    swal({
+      title: "Your messsage has been sent. Thank you!",
+      icon: "success"
+    });
+    document.getElementById("name").value ='';
+    document.getElementById("email").value ='';
+    document.getElementById("message").value = '';
+  }
 
 }
 

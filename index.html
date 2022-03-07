@@ -783,17 +783,17 @@
             <form  class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                  <label for="name">Your Name <span>*</span></label>
+                  <input type="text" name="name" class="form-control" id="name" >
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <label for="name">Your Email  <span>*</span></label>
+                  <input type="email" class="form-control" name="email" id="email" >
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
+                <label for="name">Message <span>*</span></label>
+                <textarea class="form-control" id="message" name="message" rows="10" ></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -834,6 +834,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
